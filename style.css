@@ -1,0 +1,66 @@
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  
+}
+
+
+.container {
+  height: 100vh;
+  width: 100vh;
+  background-image: url("robot.gif");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+button:active{
+  transform: scale(0.92);
+}
+
+button:disabled{
+  cursor: default;
+  filter: brightness(30%);
+}
+
+@media (max-width: 1000px){
+  .container{
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+
+.loader{
+  width: 70px;
+  height: 70px;
+  background-color: transparent;
+  border: 10px solid rgb(41, 41, 41);
+  border-radius: 50%;
+  border-left-color: rgba(255, 255, 255, 0.587);
+  border-right-color: rgba(255, 255, 255, 0.587);
+  border-bottom-color: rgba(255, 255, 255, 0.587);
+  animation-name: loading;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  position: fixed;
+  transform: translate(50%, 50%);
+}
+
+@keyframes loading{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
